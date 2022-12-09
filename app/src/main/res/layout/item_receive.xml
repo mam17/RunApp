@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.runsmac.model.Challenger" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/itemReceive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_2"
+        android:background="@color/bg_block"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_2">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:loadImage="@{item.img}"
+            android:scaleType="centerInside"
+            android:showProgress="@{item}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:lines="2"
+            android:text="@{item.name}"
+            android:textColor="@color/txtColor3"
+            android:textSize="@dimen/dimen_15"
+            android:textStyle="bold"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:showText="@{item}"
+            android:textColor="@color/txtColor4"
+            android:textSize="@dimen/dimen_15"
+            android:textStyle="bold"
+            tools:ignore="SpUsage" />
+    </LinearLayout>
+</layout>

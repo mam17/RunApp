@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="homePresenter"
+            type="com.example.runsmac.viewmodel.HomeViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:context=".fragments.HomeFragment">
+            <!--info block-->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_300"
+                android:scaleType="fitXY"
+                android:src="@drawable/image_bg" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_12"
+                android:layout_marginVertical="@dimen/dimen_16"
+                android:background="@drawable/bg_block_info"
+                android:padding="@dimen/dimen_8">
+
+                <RelativeLayout
+                    android:id="@+id/infoSteps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dimen_8">
+
+                    <ImageView
+                        android:id="@+id/iconFoot"
+                        android:layout_width="@dimen/dimen_40"
+                        android:layout_height="@dimen/dimen_40"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/foot_red" />
+
+                    <TextView
+                        android:id="@+id/today"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@+id/iconFoot"
+                        android:text="@string/today"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/dimen_16"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/numSteps"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="@dimen/dimen_4"
+                        android:layout_toEndOf="@+id/today"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dimen_16"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/lastSteps"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@+id/numSteps"
+                        android:text="@string/_4_000_steps"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dimen_16" />
+                </RelativeLayout>
+
+                <com.example.runsmac.customerviews.MySeekBar
+                    android:id="@+id/mySeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_200"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="@dimen/dimen_8"
+                    android:foregroundGravity="center"
+                    app:barColor="@color/bg_seekbar"
+                    app:barHeight="20"
+                    app:indicatorColor="@color/red"
+                    app:progressColor="@color/red" />
+            </RelativeLayout>
+            <!--Tab layout-->
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                style="@style/tabLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_45"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/bg_tablayout">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/day"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/week"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/month"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+            </com.google.android.material.tabs.TabLayout>
+
+            <FrameLayout
+                android:id="@+id/frameFrg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_12"
+                android:layout_marginTop="@dimen/dimen_8" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_12"
+                android:layout_marginVertical="@dimen/dimen_20"
+                android:background="@drawable/bg_block_info"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    android:paddingHorizontal="@dimen/dimen_10"
+                    android:paddingVertical="@dimen/dimen_10">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:id="@+id/huyChuong1"
+                            android:layout_width="@dimen/dimen_40"
+                            android:layout_height="@dimen/dimen_40"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/huy_huong1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@id/huyChuong1"
+                            android:text="@string/recent_achieved_badge"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/dimen_16"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tvViewAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:text="@string/view_all"
+                        android:textColor="@color/txtColor2"
+                        android:textSize="@dimen/dimen_16" />
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_8"
+                    app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                    app:spanCount="4" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
